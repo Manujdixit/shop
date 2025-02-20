@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ShoppingCart } from "lucide-react"
+import { useState } from "react";
+import { ShoppingCart } from "lucide-react";
 
-export function AddToCartButton({ productId }: { productId: number }) {
-  const [isAdded, setIsAdded] = useState(false)
+export function AddToCartButton({ productId }: { productId: string }) {
+  const [isAdded, setIsAdded] = useState(false);
 
   const handleAddToCart = () => {
     // Here you would typically add the product to the cart
     // For now, we'll just toggle the button state
-    setIsAdded(true)
-    setTimeout(() => setIsAdded(false), 2000)
-  }
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 2000);
+  };
 
   return (
     <button
@@ -30,6 +30,5 @@ export function AddToCartButton({ productId }: { productId: number }) {
         </>
       )}
     </button>
-  )
+  );
 }
-

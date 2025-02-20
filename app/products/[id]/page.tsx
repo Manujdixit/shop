@@ -3,8 +3,13 @@ import { AddToCartButton } from "@/components/AddToCartButton";
 import { ImageGallery } from "@/components/ImageGallery";
 import { mockProducts } from "@/data/products";
 
-export default function ProductPage({ params }: { params: { id: string } }) {
-  const product = mockProducts.find((p) => p.id === params.id);
+export default async function ProductPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const product = mockProducts.find((p) => p.id === id);
 
   if (!product) {
     notFound();
@@ -20,7 +25,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
             ${product.price.toFixed(2)}
           </p>
           <p className="text-gray-600 mb-6">{product.description}</p>
-          <AddToCartButton productId={Number(product.id)} />
+          <AddToCartButton productId={product.id} />
         </div>
       </div>
     </div>

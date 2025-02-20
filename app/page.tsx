@@ -1,9 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { SearchBar } from "@/components/SearchBar";
-import { FilterSection } from "@/components/FilterSection";
 import banner from "../public/banner.jpg";
 import { CarouselDemo } from "@/components/CarouselDemo";
 import { mockProducts } from "@/data/products";

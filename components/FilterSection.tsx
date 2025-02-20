@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useFilter } from "@/contexts/FilterContext";
+import { mockProducts } from "@/data/products";
 
 export function FilterSection() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -35,6 +36,10 @@ export function FilterSection() {
     resetBrand();
     resetRating();
   };
+
+  const uniqueBrands = [
+    ...new Set(mockProducts.map((product) => product.brand)),
+  ];
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
@@ -149,9 +154,11 @@ export function FilterSection() {
             className="w-full px-4 py-2 border border-gray-200 rounded-md text-sm bg-gray-50 hover:bg-gray-100 focus:bg-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%236b7280%22%3E%3Cpath%20d%3D%22M6%208l4%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_0.5rem_center] bg-[length:1.5em_1.5em]"
           >
             <option value="">All Brands</option>
-            <option value="brand1">Brand 1</option>
-            <option value="brand2">Brand 2</option>
-            <option value="brand3">Brand 3</option>
+            {uniqueBrands.map((brand) => (
+              <option key={brand} value={brand}>
+                {brand}
+              </option>
+            ))}
           </select>
         </div>
         <div className="flex flex-col gap-3">
