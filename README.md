@@ -1,6 +1,6 @@
 # E-commerce Shop
 
-A modern e-commerce platform built with Next.js, featuring a responsive design and seamless shopping experience.
+A modern e-commerce platform built with Next.js, featuring a responsive design.
 
 ## Getting Started
 
@@ -13,15 +13,6 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Environment Setup
-
-Create a `.env.local` file in the root directory with the following variables:
-
-```env
-NEXT_PUBLIC_API_URL=your_api_url
-NEXT_PUBLIC_STRIPE_PUBLIC_KEY=your_stripe_key
-```
 
 ## Tech Stack
 
