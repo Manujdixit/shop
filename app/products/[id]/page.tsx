@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { ImageGallery } from "@/components/ImageGallery";
-import { CustomerReviews } from "@/components/CustomerReviews";
 import { mockProducts } from "@/data/products";
 
 export default function ProductPage({ params }: { params: { id: string } }) {
@@ -24,7 +23,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
           <AddToCartButton productId={Number(product.id)} />
         </div>
       </div>
-      <CustomerReviews productId={Number(product.id)} />
     </div>
   );
 }
