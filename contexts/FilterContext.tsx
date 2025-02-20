@@ -11,6 +11,8 @@ interface FilterContextType {
   rating: string;
   setRating: (rating: string) => void;
   filterProducts: (products: Product[]) => Product[];
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
 }
 
 const FilterContext = createContext<FilterContextType | undefined>(undefined);
@@ -19,14 +21,18 @@ export function FilterProvider({ children }: { children: ReactNode }) {
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
   const [brand, setBrand] = useState("");
   const [rating, setRating] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const filterProducts = (products: Product[]) => {
     return products.filter((product) => {
+      const matchesSearch = searchQuery
+        ? product.name.toLowerCase().includes(searchQuery.toLowerCase())
+        : true;
       const matchesPrice =
         product.price >= priceRange[0] && product.price <= priceRange[1];
       const matchesBrand = brand === "" || product.brand === brand;
       const matchesRating = rating === "" || product.rating >= Number(rating);
-      return matchesPrice && matchesBrand && matchesRating;
+      return matchesSearch && matchesPrice && matchesBrand && matchesRating;
     });
   };
 
@@ -39,6 +45,8 @@ export function FilterProvider({ children }: { children: ReactNode }) {
         setBrand,
         rating,
         setRating,
+        searchQuery,
+        setSearchQuery,
         filterProducts,
       }}
     >
