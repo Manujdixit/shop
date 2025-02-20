@@ -1,0 +1,18 @@
+1. Home Page (Landing Page)
+
+   Banner Section with Search:
+   Create a hero section at the top of the page with a large attractive banner image.
+   Include a search bar within the banner, allowing users to search for products or items.
+   The search bar should have:
+   A search button (magnifying glass or text button).
+   integrate a suggestion list or auto-complete functionality to show results as the user types (use JavaScript for this).
+   When the user submits a search, redirect them to the listing page with the search query displayed as a filter.
+
+   Carousel Section:
+   Add a carousel (image slider) below the banner that displays multiple images or content (you can use a library like Swiper, Slick, etc.).
+   Make sure the carousel automatically slides, and allows users to manually change slides.
+
+   Filter Section:
+   Include a simple product or category filter below the carousel section.
+   Filters can include categories like: "Price Range," "Brand," "Rating," etc.
+   Use simple UI components like checkboxes, dropdowns, or input fields.
