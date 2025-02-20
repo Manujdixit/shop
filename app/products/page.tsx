@@ -1,13 +1,13 @@
 "use client";
 
-import { products } from "@/data/products";
+import { mockProducts } from "@/data/products";
 import { FilterSection } from "@/components/FilterSection";
 import { ProductCard } from "@/components/ProductCard";
 import { useFilter } from "@/contexts/FilterContext";
 
 export default function ProductsPage() {
   const { filterProducts } = useFilter();
-  const filteredProducts = filterProducts(products);
+  const filteredProducts = filterProducts(mockProducts);
 
   return (
     <div className="container mx-auto px-4 py-8">

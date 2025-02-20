@@ -6,7 +6,7 @@ import { SearchBar } from "@/components/SearchBar";
 import { FilterSection } from "@/components/FilterSection";
 import banner from "../public/banner.jpg";
 import { CarouselDemo } from "@/components/CarouselDemo";
-import { products } from "@/data/products";
+import { mockProducts } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { useFilter } from "@/contexts/FilterContext";
 import { Product } from "@/data/products";
@@ -48,7 +48,7 @@ export default function Home() {
       {/* Featured Products */}
       <section className="my-12">
         <div className="container mx-auto px-4">
-          <FilteredProducts products={products} />
+          <FilteredProducts products={mockProducts} />
           <div className="text-center mt-8">
             <Link
               href="/products"
